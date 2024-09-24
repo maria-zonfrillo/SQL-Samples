@@ -19,5 +19,5 @@ SELECT
   patients.dob AS date_of_birth,
 FROM patients
 LEFT JOIN last_visit ON visits.patient_id = patients.id AND last_visit.row = 1
-LEFT JOIN last_appt ON last_appt.patient_id = patients.id AND last_appt.row = 1
+LEFT JOIN next_appt ON next_appt.patient_id = patients.id AND next_appt.row = 1
 WHERE EXTRACT(YEAR FROM AGE(dob)) < 18
